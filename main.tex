@@ -1,0 +1,76 @@
+\documentclass[12pt,a4paper,oneside]{report}
+
+	%----------------------------------------------------------
+	%	Paquetes utilizados
+	%----------------------------------------------------------
+%\usepackage[pass,showframe,a4paper,top=30mm,left=30mm,right=20mm,bottom=20mm]{geometry}
+\usepackage[a4paper,top=30mm,left=30mm,right=20mm,bottom=20mm,headheight=42pt]{geometry}
+\setlength{\headheight}{42pt}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{times}
+\usepackage[english,spanish]{babel}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{lscape}
+%\usepackage{showframe}
+\usepackage{pdfpages}
+\usepackage{apacite}
+\usepackage{url}
+\usepackage{lipsum}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{chngpage}
+\usepackage{bigstrut}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{wrapfig}
+\usepackage{setspace}
+\linespread{1.25} %https://tex.stackexchange.com/questions/65849/confusion-onehalfspacing-vs-spacing-vs-word-vs-the-world
+
+	%----------------------------------------------------------
+	%	INICIO DOCUMENTO 
+	%----------------------------------------------------------
+
+\input{encabezado&pie}
+
+\begin{document}
+	\input{configuraciones}
+
+	\begin{titlepage}
+		\input{titulo/portada.tex}
+	\end{titlepage}
+	
+	\input{titulo/hoja1.tex}
+	%----------------------------------------------------------
+	\chapter*{\centering{DEDICATORIA}}
+	\input{capitulos/dedicatoria}
+	
+	
+	\chapter*{\centering{AGRADECIMIENTOS}}
+	\input{capitulos/agradecimientos}
+	
+	\tableofcontents
+	
+	\chapter{Memoria Descriptiva}
+	\input{capitulos/mem_descriptiva}
+	
+	\chapter{Siguiente Capítulo}
+	\input{capitulos/capitulo2}
+	
+
+	 
+	%----------------------------------------------------------
+	%	BIBLIOGRAFIA
+	%----------------------------------------------------------
+	
+	\bibliographystyle{apacite} % estilo de la biblio (probar estilos "ieeetr" o "apacite")
+	\renewcommand*{\bibname}{Bibliografía}
+	\bibliography{./bibliografia} % nombre del archivo .bib
+	\addcontentsline{toc}{chapter}{Bibliografia}
+	\newpage
+
+
+
+\end{document}

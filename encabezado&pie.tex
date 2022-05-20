@@ -1,0 +1,35 @@
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancypagestyle{plain}{}
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+%\renewcommand{\sectionmark}[1]{\markright{#1}{}}
+
+\fancyhead{}
+\fancyhead[L]{
+	\setlength{\unitlength}{1pt}
+	\qquad \quad Universidad Tecnológica Nacional\\
+	\qquad \quad Facultad Regional Reconquista\\
+	\qquad \quad Año 2021\\      %para borrar el año borrar esta linea y el vspace de abajo
+	\vspace*{-15pt}
+	\begin{picture}(1,1)
+		\put(0,-2){\includegraphics[height=39pt]{imagenes/LogoUTN_nvgsb.eps}}
+\end{picture}}
+
+\fancyhead[C]{}
+\fancyhead[R]{Proyecto Final\\TU NOMBRE COMPLETO\\\leftmark}
+
+\fancyfoot{}
+\fancyfoot[L,C]{}
+\fancyfoot[R]{\thepage}
+
+
+\usepackage{etoolbox} % https://tex.stackexchange.com/questions/39988/space-before-chapters-and-contents
+\makeatletter
+\patchcmd{\@makechapterhead}{50\p@}{0pt}{}{}
+\patchcmd{\@makeschapterhead}{50\p@}{0pt}{}{}
+\makeatother
+
+% Las 3 siguientes lineas no se usan, pero si se usa comando \maketitle son utiles
+\title{Diseño eléctrico, programación \\ y control de servicios \\ auxiliares para caldera de \\ central térmica}
+\author{Santiago Andrés Franzoi}
+\date{Marzo 2021}
